@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:xlink="http://www.w3.org/1999/xlink">
+<html lang="en" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.thymeleaf.org">
 
 <head>
 
@@ -7,9 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Layout-Template</title>
+  <title layout:title-pattern="Maven/Grunt-Integration - $CONTENT_TITLE">Layout-Template</title>
 
-  <link rel="stylesheet" type="text/css" href="../../css/frontend.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/frontend.css" th:hre="@{'/css/frontend.css'}" />
 
 </head>
 
@@ -20,13 +20,13 @@
       <svg>
         <use xlink:href="../../img/sprite.svg#mo"></use>
       </svg>
-      <span>Simple Example-Project for Template-Development</span>
+      <span th:text="'Maven/Grunt-Integration :: ' + ${title}">Simple Example-Project for Template-Development</span>
     </h2>
     <hr />
     <!-- Navigation -->
     <nav id="menu" class="navbar navbar-submenu navbar-fixed-top">
       <h3 class="sr-only">Navigation</h3>
-      <ul>
+      <ul layout:fragment="menu">
         <li><strong>Home</strong></li>
         <li><a href="#a">A</a></li>
         <li><a href="#b">B</a></li>
@@ -39,7 +39,7 @@
 
   <main>
 
-    <article id="top">
+    <article id="top" layout:fragment="content">
       <h1>Layout-Template</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
