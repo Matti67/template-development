@@ -3,6 +3,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-svgstore');
 
   grunt.initConfig({
 
@@ -28,6 +29,19 @@ module.exports = function(grunt) {
       }
     },
 
+    svgstore: {
+      options: {
+        cleanup: true
+      },
+      sprite: {
+        files: {
+          'dist/img/sprite.svg': [
+            'img/mo.svg'
+          ]
+        }
+      }
+    },
+
     watch: {
       copy: {
         files: [ 'html/**/*.html' ],
@@ -36,11 +50,15 @@ module.exports = function(grunt) {
       less: {
         files: [ 'less/**/*.less' ],
         tasks: [ 'less' ]
+      },
+      svgstore: {
+        files: [ 'img/**/*.svg' ],
+        tasks: [ 'svgstore' ]
       }
     }
 
   });
 
-  grunt.registerTask('default', [ 'copy', 'less' ]);
+  grunt.registerTask('default', [ 'copy', 'less', 'svgstore' ]);
 
 };

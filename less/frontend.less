@@ -31,10 +31,22 @@ hr
   border-color: @normal;
   clear: both;
 }
+svg
+{
+  fill: currentColor;
+}
+
 
 header
 {
   margin-bottom: 3em;
+  > h2 > svg
+  {
+    position: relative;
+    top: .2em;
+    height: 1.25em;
+    width: 2.5em;
+  }
 }
 nav
 {
