@@ -63,6 +63,18 @@ module.exports = function(grunt) {
 
   });
 
+  grunt.registerTask('http-server', function() {
+
+    grunt.util.spawn({
+      cmd: 'node_modules/http-server/bin/http-server',
+      args: [ 'dist' ],
+      opts: { stdio: 'inherit' }
+    });
+
+  });
+
   grunt.registerTask('default', [ 'copy', 'less', 'svgstore' ]);
+
+  grunt.registerTask('run-server', [ 'default', 'http-server', 'watch' ]);
 
 };
