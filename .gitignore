@@ -1,2 +1,5 @@
-dist
+dist/**/*.html
+dist/css
+dist/fonts
+dist/img
 node_modules
