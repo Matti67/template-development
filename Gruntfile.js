@@ -14,7 +14,11 @@ module.exports = function(grunt) {
         expand: true,
         cwd: 'html',
         src: '**/*.html',
-        dest: 'dist/thymeleaf/templates',
+        dest: 'dist/thymeleaf/templates'
+      },
+      fonts: {
+        src: 'fonts/**/*',
+        dest: 'dist/'
       }
     },
 

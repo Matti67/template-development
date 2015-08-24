@@ -3,11 +3,27 @@
 @light:      #9f9;
 @lighter:    #fff;
 
+@font-face {
+  font-family: 'White Rabbit';
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  src: url('../fonts/white-rabbit.woff');
+  -webkit-font-feature-settings: "liga";
+     -moz-font-feature-settings: "liga=1";
+     -moz-font-feature-settings: "liga";
+      -ms-font-feature-settings: "liga" 1;
+       -o-font-feature-settings: "liga";
+          font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 body
 {
   color: @normal;
   background-color: @background;
+  font-family: "White Rabbit";
   font-size: 20px;
 }
 a
